@@ -1,4 +1,4 @@
-package eu.dcode.ecommerce.dto;
+package eu.dcode.ecommerce.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,6 +1,6 @@
 package eu.dcode.ecommerce.repository;
 
-import eu.dcode.ecommerce.dto.User;
+import eu.dcode.ecommerce.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
