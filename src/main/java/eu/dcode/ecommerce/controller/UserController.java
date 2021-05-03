@@ -1,6 +1,6 @@
 package eu.dcode.ecommerce.controller;
 
-import eu.dcode.ecommerce.dto.User;
+import eu.dcode.ecommerce.model.User;
 import eu.dcode.ecommerce.repository.UserRepository;
 import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
