@@ -34,7 +34,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-		
+
         <!-- logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -56,7 +56,14 @@
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${org.slf4j.version}</version>
         </dependency>
-		
+        <!-- postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- postgresql -->
+
         <!-- test -->
         <dependency>
             <groupId>junit</groupId>
@@ -109,7 +116,7 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
-	
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -144,7 +151,7 @@
         <junit-jupiter.version>5.6.2</junit-jupiter.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <h2.version>1.4.197</h2.version>
-		
+
         <!-- testing -->
         <junit.version>4.12</junit.version>
         <hamcrest.version>2.2</hamcrest.version>
