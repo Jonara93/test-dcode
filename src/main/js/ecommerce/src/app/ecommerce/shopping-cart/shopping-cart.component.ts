@@ -58,7 +58,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
             let productOrder = this.ecommerceService.SelectedProductOrder;
             if (productOrder) {
                 this.orders.productOrders.push(new ProductOrder(
-                    productOrder.product, productOrder.quantity*2));
+                    productOrder.product, productOrder.quantity));
             }
             this.ecommerceService.ProductOrders = this.orders;
             this.orders = this.ecommerceService.ProductOrders;
