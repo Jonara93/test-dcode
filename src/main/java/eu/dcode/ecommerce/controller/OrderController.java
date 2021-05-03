@@ -52,25 +52,22 @@ public class OrderController {
 
         List<OrderProduct> orderProducts = new ArrayList<>();
         for (OrderProductDto dto : formDtos) {
-            orderProducts.add(orderProductService.create(new OrderProduct(order, productService.getProduct(dto
-              .getProduct()
-              .getId()), dto.getQuantity())));
+            orderProducts.add(orderProductService.create(new OrderProduct(
+                    order,
+                    productService.getProduct(dto.getProduct().getId()),
+                    dto.getQuantity()
+            )));
         }
 
         order.setOrderProducts(orderProducts);
 
-        for (OrderProduct orderProduct : orderProducts) {
-            orderProducts.add(orderProduct);
-            order.setOrderProducts(orderProducts);
-        }
-
         this.orderService.update(order);
 
         String uri = ServletUriComponentsBuilder
-          .fromCurrentServletMapping()
-          .path("/orders/{id}")
-          .buildAndExpand(order.getId())
-          .toString();
+                .fromCurrentServletMapping()
+                .path("/orders/{id}")
+                .buildAndExpand(order.getId())
+                .toString();
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", uri);
 
@@ -79,11 +76,11 @@ public class OrderController {
 
     private void validateProductsExistence(List<OrderProductDto> orderProducts) {
         List<OrderProductDto> list = orderProducts
-          .stream()
-          .filter(op -> Objects.isNull(productService.getProduct(op
-            .getProduct()
-            .getId())))
-          .collect(Collectors.toList());
+                .stream()
+                .filter(op -> Objects.isNull(productService.getProduct(op
+                        .getProduct()
+                        .getId())))
+                .collect(Collectors.toList());
 
         if (!CollectionUtils.isEmpty(list)) {
             new ResourceNotFoundException("Product not found");
