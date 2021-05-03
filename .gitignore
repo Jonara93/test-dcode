@@ -134,3 +134,4 @@ hs_err_pid*
 *.iml
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,java
+src/main/js/ecommerce/node_modules
